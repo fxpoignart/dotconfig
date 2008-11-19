@@ -1,0 +1,3 @@
+#name : <p> ... </p>
+# --
+<${1:p}>$0</${1:$(car (split-string text))}>

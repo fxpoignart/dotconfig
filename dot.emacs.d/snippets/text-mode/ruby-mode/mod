@@ -1,0 +1,5 @@
+#name : module ModuleName ... end
+# --
+module ${1:ModuleName}
+  $0
+end

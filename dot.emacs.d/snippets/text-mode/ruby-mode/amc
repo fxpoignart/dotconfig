@@ -1,0 +1,7 @@
+#name : alias_method_chain :method, :chain
+# --
+def ${1:method}_with_${2:chain}
+  $0
+  $1_without_$2
+end
+alias_method_chain :$1, :$2

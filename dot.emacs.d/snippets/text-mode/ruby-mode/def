@@ -1,0 +1,5 @@
+#name : def method_name ... end
+# --
+def ${1:method_name}
+  $0
+end
