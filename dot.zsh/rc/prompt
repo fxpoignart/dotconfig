@@ -1,0 +1,48 @@
+if [ -z "$NO_COLORS" ]; then
+	autoload -U colors
+	colors
+fi
+
+if [[ $TERM != "dumb" ]]; then
+SHORT_HOST=`hostname | sed 's/\([a-z_]*\)\..*/\1/'`
+
+if [ -z "$NO_COLORS" ]; then
+	host_color="black"
+	path_color="black"
+
+	host="%{$fg[$host_color]%}$SHORT_HOST"
+	cpath="%B%{$fg[$path_color]%}%20<..<%~%b"
+
+	#host="$SHORT_HOST"
+	#cpath="%B%{$terminfo[bold]%}%20<..<%~%b"
+
+	end="%{$reset_color%}"
+
+	unset host_color path_color
+else 
+	host="$SHORT_HOST"
+	cpath="%20<..<%~"
+	end=
+fi
+
+PS1="[$host:${cpath}$end] "		
+fi
+
+
+if [[ -n $TERM && ( $TERM = "xterm" || $TERM = "rxvt" )  ]]; then
+  _titlebar () { echo -ne "\033]2;$*\007" }
+
+  chpwd () { _titlebar "$USER@$SHORT_HOST:$PWD" }
+  chpwd
+fi
+
+if [[ -n $TERM && ( $TERM = "screen" )  ]]; then
+  _titlebar () { echo -ne "\033k$*\033\134" }
+
+  chpwd () { _titlebar "$USER@$SHORT_HOST:$PWD" }
+  chpwd
+fi
+
+unset host_color path_color end
+
+

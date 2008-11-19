@@ -1,0 +1,6 @@
+java_profile=/usr/local/java/profile
+[ -x "$java_profile" ] && . "$java_profile"
+unset java_profile
+
+#ANT_HOME=/usr/local/java/ant
+#export ANT_HOME

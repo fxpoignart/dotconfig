@@ -1,0 +1,2 @@
+BROWSER='firefox -raise -remote openURL(%s,new-window)'
+export BROWSER

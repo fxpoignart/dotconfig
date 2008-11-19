@@ -1,0 +1,5 @@
+autoload -U compinit
+compinit
+
+zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
+zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*~'

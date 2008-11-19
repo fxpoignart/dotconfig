@@ -1,0 +1,6 @@
+limit core 0								# no core file 
+
+#
+# Key binging
+#
+bindkey -e                 	# emacs key bindings

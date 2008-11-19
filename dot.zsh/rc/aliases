@@ -1,0 +1,7 @@
+if [ -z "$NO_COLORS" ]; then
+	alias ls='command ls --color'
+fi
+
+alias ll='ls -l'
+alias h='history'
+alias myps='ps -u $USER'

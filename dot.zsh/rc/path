@@ -1,0 +1,9 @@
+function addpath() {
+	[ -d $1 ] && PATH=$PATH:$1
+}
+
+addpath /var/lib/gems/1.8/bin
+addpath ~/bin
+addpath ~/share/bin
+
+unfunction addpath
