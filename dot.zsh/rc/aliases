@@ -5,3 +5,4 @@ fi
 alias ll='ls -l'
 alias h='history'
 alias myps='ps -u $USER'
+alias emacs='emacs-snapshot'
